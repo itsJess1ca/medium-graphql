@@ -17,7 +17,7 @@ class MediumConnector {
   }
 
   getPosts(user: string, limit?: string): Promise<Post[]> {
-    console.log("[Medium] Getting posts for " + user + ` from ${`${this.feedUrl}/${user}/latest${limit ? '?count=' + limit : ''}`}`);
+    console.log("[Medium] Getting posts for " + user + ` from ${`${this.feedUrl}/${user}/latest${limit ? '?limit=' + limit : ''}`}`);
     return new Promise((resolve, reject) => {
       fetch(`${this.feedUrl}/${user}/latest${limit ? '?count=' + limit : ''}`, {
         headers: {
