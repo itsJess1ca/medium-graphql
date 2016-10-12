@@ -12,9 +12,5 @@ cache:
 node_js:
 - '6.4'
 
-before_script:
- #todo: Figure out a way to use yarn to speed up package installs
-  - npm run build
-  - npm start
 
-script: npm test
+script: npm run test:start
