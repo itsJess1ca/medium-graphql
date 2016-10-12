@@ -9,7 +9,8 @@
     "build:w": "tsc -w",
     "start": "npm run build && npm run serve",
     "serve": "concurrently \"npm run build:w\" \"nodemon --delay 2 dist/server.js\"",
-    "test": "mocha --compilers js:babel-register"
+    "test": "mocha --compilers js:babel-register",
+    "test:serve": "concurrently \"npm run serve\" \"npm run test\""
   },
   "keywords": [],
   "author": "Jed <jed@streamshape.io>",
