@@ -4,7 +4,7 @@ An Unofficial wrapper for Medium.com
 
 ```
 Run Dev
-- npm install
+- yarn (or npm install)
 - npm start
 - Go to http://localhost:4000/graphiql (For the GraphIQL UI)
 - http://localhost:4000/graphql (for standard requests)
