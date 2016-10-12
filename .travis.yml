@@ -13,4 +13,4 @@ node_js:
 - '6.4'
 
 
-script: npm run test:start
+script: npm run test:serve
