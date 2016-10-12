@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/j3ddesign/medium-graphql.svg?branch=master)](https://travis-ci.org/j3ddesign/medium-graphql)
+
 NOTE: This is extremely early WIP - work will be gradually done on this as I have time/chance
 
 An Unofficial wrapper for Medium.com
