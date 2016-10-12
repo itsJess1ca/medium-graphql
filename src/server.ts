@@ -5,7 +5,7 @@ import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 import { apolloExpress, graphiqlExpress } from 'apollo-server';
 
-const app = express();
+export const app = express();
 
 import schema from './schema.graphql';
 import MediumConnector from './connectors/medium.connector';
@@ -37,7 +37,7 @@ app.use('/graphiql', graphiqlExpress({
 
 
 //noinspection TypeScriptUnresolvedFunction
-app.listen(
+export const server = app.listen(
   4000,
   () => console.log('GraphQL Server running at http://localhost:4000')
 );

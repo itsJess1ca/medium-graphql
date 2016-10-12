@@ -16,6 +16,6 @@ describe('Node Server', () => {
       assert.equal(405, res.statusCode);
       done();
     })
-  })
+  });
 
 });
