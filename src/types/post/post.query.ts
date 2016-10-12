@@ -12,7 +12,16 @@ export const PostsQuery = {
     },
     limit: {
       type: GraphQLString
-    }
+    },
+    to: {
+      type: GraphQLString
+    },
+    source: {
+      type: GraphQLString
+    },
+    collectionId: {
+      type: GraphQLString
+    },
   },
   resolve: PostResolver
 };
