@@ -1,0 +1,7 @@
+{
+  "name": "graphql-server-test",
+  "dependencies": {},
+  "globalDependencies": {
+    "graphql": "github:nitintutlani/typed-graphql"
+  }
+}

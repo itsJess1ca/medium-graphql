@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "firstName": "Jeremy",
+    "lastName": "Titter",
+    "email": "jeremy@titters.com",
+    "username": "jezza",
+    "friends": [
+      "2",
+      "3"
+    ]
+  },
+  {
+    "id": "2",
+    "firstName": "Kylie",
+    "lastName": "Sinks",
+    "email": "sinky@gmail.com",
+    "username": "sinker",
+    "friends": [
+      "1"
+    ]
+  },
+  {
+    "id": "3",
+    "firstName": "James",
+    "lastName": "Damp",
+    "email": "moist@dampspot.io",
+    "username": "lubricator",
+    "friends": [
+      "1",
+      "2"
+    ]
+  }
+]
