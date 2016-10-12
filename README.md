@@ -12,7 +12,8 @@ Run Dev
 
 ```
 Run Production build
-- npm run build:prod
+- npm run build
+- node dist/server.js
 ```
 
 
