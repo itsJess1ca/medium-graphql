@@ -1,0 +1,20 @@
+sudo: required
+dist: trusty
+language: nodejs
+
+git:
+  depth: 3
+
+cache:
+  directories:
+    - node_modules
+
+node_js:
+  - '6.4'
+
+before_script:
+  - yarn
+  - yarn add --global typescript@2.0.0
+  - tsc
+
+script: npm test
