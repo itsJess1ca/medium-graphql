@@ -10,7 +10,7 @@
     "start": "npm run build && npm run serve",
     "serve": "concurrently \"npm run build:w\" \"nodemon --delay 2 dist/server.js\"",
     "test": "mocha --compilers js:babel-register",
-    "test:serve": "concurrently \"node dist/server.js\" \"npm run test\""
+    "test:serve": "concurrently --kill-others --success first \"node dist/server.js\" \"npm run test\""
   },
   "keywords": [],
   "author": "Jed <jed@streamshape.io>",
