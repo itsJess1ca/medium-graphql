@@ -12,7 +12,7 @@ cache:
 node_js:
 - '6.4'
 
-before-script:
- - npm run build
+before_script:
+- npm run build
 
 script: npm run test:serve
