@@ -26,10 +26,10 @@ export const PostType = new GraphQLObjectType({
       resolve: (root) => root.virtuals.emailSnippet
     },
     createdAt: {
-      type: GraphQLInt
+      type: GraphQLString
     },
     updatedAt: {
-      type: GraphQLInt
+      type: GraphQLString
     }
   })
 });
