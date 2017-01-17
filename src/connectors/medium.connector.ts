@@ -31,7 +31,7 @@ class MediumConnector {
       })
         .then(stripJSONPrefix)
         .then(JSON.parse)
-        .then(data => {
+        .then((data: LatestResponse) => {
           const CollectionObject = data.payload.references.Collection;
           const PostObject = data.payload.references.Post;
           const posts = [];
@@ -43,7 +43,10 @@ class MediumConnector {
               const post = PostObject[postId];
               if (!collectionId || post.homeCollectionId === collectionId) {
                 // appending accountName to post object to ease generation of post url
-                posts.push({ ...post, collection: CollectionObject[post.homeCollectionId], accountName: user });
+                posts.push(Object.assign({}, post, {
+                  collection: CollectionObject[post.homeCollectionId],
+                  accountName: user
+                }));
               }
             }
           }
