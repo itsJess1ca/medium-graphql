@@ -38,6 +38,6 @@ app.use('/graphiql', graphiqlExpress({
 
 //noinspection TypeScriptUnresolvedFunction
 export const server = app.listen(
-  4000,
+  process.env.PORT || 4000,
   () => console.log('GraphQL Server running at http://localhost:4000')
 );
