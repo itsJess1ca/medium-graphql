@@ -12,7 +12,8 @@ export const PostType = new GraphQLObjectType({
     },
     url: {
       type: GraphQLString,
-      resolve: (root, args) => `https://medium.com/${root.accountName}/${root.uniqueSlug}`
+      resolve: (root, args) =>
+        `https://${root.collection && root.collection.domain ? root.collection.domain : `medium.com/${root.accountName}`}/${root.uniqueSlug}`
     },
     title: {
       type: GraphQLString
