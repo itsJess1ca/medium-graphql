@@ -13,6 +13,7 @@ interface LatestResponse {
       };
       Social: any;
       SocialStats: any;
+      Collection: any;
     };
     paging: {
       path: string;
