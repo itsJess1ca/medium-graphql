@@ -44,7 +44,7 @@ class MediumConnector {
               if (!collectionId || post.homeCollectionId === collectionId) {
                 // appending accountName to post object to ease generation of post url
                 posts.push(Object.assign({}, post, {
-                  collection: CollectionObject[post.homeCollectionId],
+                  collection: post.homeCollectionId && CollectionObject[post.homeCollectionId],
                   accountName: user
                 }));
               }
