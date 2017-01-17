@@ -37,11 +37,13 @@ class MediumConnector {
 
           // Split the Post object into an array of posts
           // todo: Is there a better way to do this?
-          for (let post in PostObject) {
-            if (PostObject.hasOwnProperty(post)) {
-
-              // appending accountName to post object to ease generation of post url
-              posts.push(Object.assign({}, PostObject[post], { accountName: user }));
+          for (const postId in PostObject) {
+            if (PostObject.hasOwnProperty(postId)) {
+              const post = PostObject[postId];
+              if (!collectionId || post.homeCollectionId === collectionId) {
+                // appending accountName to post object to ease generation of post url
+                posts.push(Object.assign({}, post, { accountName: user }));
+              }
             }
           }
           resolve(posts);
