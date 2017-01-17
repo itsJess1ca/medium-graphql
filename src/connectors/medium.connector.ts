@@ -3,7 +3,6 @@ import * as fetch from 'node-fetch';
 import { GraphQLEnumType } from 'graphql';
 
 class MediumConnector {
-  apiUrl: string = "https://api.thetvdb.com";
   feedUrl: string = "https://medium.com";
   token: string;
   fetchOptions: FetchOptions = {
@@ -16,7 +15,7 @@ class MediumConnector {
     console.log("[Medium] Now Running");
   }
 
-  getPosts({user, limit, to, source, collectionId}: {user: string, limit?: string, to?: string, source?: string, collectionId?: string}): Promise<Post[]> {
+  getPosts({user, limit, to, source, collectionId}: { user: string, limit?: string, to?: string, source?: string, collectionId?: string }): Promise<Post[]> {
 
     const params: any = Object.assign({}, arguments['0']);
     delete params.user;
@@ -42,7 +41,7 @@ class MediumConnector {
             if (PostObject.hasOwnProperty(post)) {
 
               // appending accountName to post object to ease generation of post url
-              posts.push(Object.assign({}, PostObject[post], {accountName: user}));
+              posts.push(Object.assign({}, PostObject[post], { accountName: user }));
             }
           }
           resolve(posts);
