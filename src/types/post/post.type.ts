@@ -12,7 +12,8 @@ export const PostType = new GraphQLObjectType({
     },
     url: {
       type: GraphQLString,
-      resolve: (root, args) => `https://medium.com/${root.accountName}/${root.uniqueSlug}`
+      resolve: (root, args) =>
+        `https://${root.collection && root.collection.domain ? root.collection.domain : `medium.com/${root.accountName}`}/${root.uniqueSlug}`
     },
     title: {
       type: GraphQLString
@@ -26,10 +27,22 @@ export const PostType = new GraphQLObjectType({
       resolve: (root) => root.virtuals.emailSnippet
     },
     createdAt: {
-      type: GraphQLInt
+      type: GraphQLString,
+      resolve: (root) => handleDate(root.createdAt)
     },
     updatedAt: {
-      type: GraphQLInt
+      type: GraphQLString,
+      resolve: (root) => handleDate(root.updatedAt)
+    },
+    firstPublishedAt: {
+      type: GraphQLString,
+      resolve: (root) => handleDate(root.firstPublishedAt)
+    },
+    latestPublishedAt: {
+      type: GraphQLString,
+      resolve: (root) => handleDate(root.latestPublishedAt)
     }
   })
 });
+
+const handleDate = (date) => date ? new Date(date).toISOString() : null;

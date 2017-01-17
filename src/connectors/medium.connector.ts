@@ -3,7 +3,6 @@ import * as fetch from 'node-fetch';
 import { GraphQLEnumType } from 'graphql';
 
 class MediumConnector {
-  apiUrl: string = "https://api.thetvdb.com";
   feedUrl: string = "https://medium.com";
   token: string;
   fetchOptions: FetchOptions = {
@@ -16,7 +15,7 @@ class MediumConnector {
     console.log("[Medium] Now Running");
   }
 
-  getPosts({user, limit, to, source, collectionId}: {user: string, limit?: string, to?: string, source?: string, collectionId?: string}): Promise<Post[]> {
+  getPosts({user, limit, to, source, collectionId}: { user: string, limit?: string, to?: string, source?: string, collectionId?: string }): Promise<Post[]> {
 
     const params: any = Object.assign({}, arguments['0']);
     delete params.user;
@@ -33,16 +32,19 @@ class MediumConnector {
         .then(stripJSONPrefix)
         .then(JSON.parse)
         .then(data => {
+          const CollectionObject = data.payload.references.Collection;
           const PostObject = data.payload.references.Post;
           const posts = [];
 
           // Split the Post object into an array of posts
           // todo: Is there a better way to do this?
-          for (let post in PostObject) {
-            if (PostObject.hasOwnProperty(post)) {
-
-              // appending accountName to post object to ease generation of post url
-              posts.push(Object.assign({}, PostObject[post], {accountName: user}));
+          for (const postId in PostObject) {
+            if (PostObject.hasOwnProperty(postId)) {
+              const post = PostObject[postId];
+              if (!collectionId || post.homeCollectionId === collectionId) {
+                // appending accountName to post object to ease generation of post url
+                posts.push({ ...post, collection: CollectionObject[post.homeCollectionId], accountName: user });
+              }
             }
           }
           resolve(posts);
