@@ -26,10 +26,22 @@ export const PostType = new GraphQLObjectType({
       resolve: (root) => root.virtuals.emailSnippet
     },
     createdAt: {
-      type: GraphQLString
+      type: GraphQLString,
+      resolve: (root) => handleDate(root.createdAt)
     },
     updatedAt: {
-      type: GraphQLString
+      type: GraphQLString,
+      resolve: (root) => handleDate(root.updatedAt)
+    },
+    firstPublishedAt: {
+      type: GraphQLString,
+      resolve: (root) => handleDate(root.firstPublishedAt)
+    },
+    latestPublishedAt: {
+      type: GraphQLString,
+      resolve: (root) => handleDate(root.latestPublishedAt)
     }
   })
 });
+
+const handleDate = (date) => date ? new Date(date).toISOString() : null;
