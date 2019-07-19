@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/j3ddesign/medium-graphql.svg?branch=master)](https://travis-ci.org/j3ddesign/medium-graphql)
 
-NOTE: This is extremely early WIP - work will be gradually done on this as I have time/chance
+[DEPRECATED] Due to no longer having time to work on this repo. Feel free to fork
+----------------
 
 An Unofficial wrapper for Medium.com
 
