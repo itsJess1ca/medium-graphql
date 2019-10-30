@@ -27,7 +27,7 @@
     "morgan": "^1.7.0",
     "mysql": "^2.11.1",
     "node-fetch": "^1.6.0",
-    "sequelize": "^3.24.1"
+    "sequelize": "^5.15.1"
   },
   "devDependencies": {
     "@types/body-parser": "0.0.31",
