@@ -16,7 +16,7 @@
   "author": "Jed <jed@streamshape.io>",
   "license": "UNLICENSED",
   "dependencies": {
-    "apollo-server": "^0.2.5",
+    "apollo-server": "^2.14.2",
     "body-parser": "^1.15.2",
     "cors": "^2.8.0",
     "express": "^4.14.0",
